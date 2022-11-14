@@ -11,6 +11,8 @@
 		FD0116632920641100C12044 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0116622920641100C12044 /* ContentView.swift */; };
 		FD0116652920641200C12044 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0116642920641200C12044 /* Assets.xcassets */; };
 		FD0116682920641200C12044 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0116672920641200C12044 /* Preview Assets.xcassets */; };
+		FD0116712920646A00C12044 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0116702920646A00C12044 /* Theme.swift */; };
+		FD01167529206A4F00C12044 /* ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD01167429206A4F00C12044 /* ThemePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		FD0116622920641100C12044 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FD0116642920641200C12044 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD0116672920641200C12044 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FD0116702920646A00C12044 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		FD01167429206A4F00C12044 /* ThemePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,9 @@
 			isa = PBXGroup;
 			children = (
 				FD0116602920641100C12044 /* ThemeSwitcherApp.swift */,
+				FD0116702920646A00C12044 /* Theme.swift */,
 				FD0116622920641100C12044 /* ContentView.swift */,
+				FD01167429206A4F00C12044 /* ThemePickerView.swift */,
 				FD0116642920641200C12044 /* Assets.xcassets */,
 				FD0116662920641200C12044 /* Preview Content */,
 			);
@@ -137,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD01167529206A4F00C12044 /* ThemePickerView.swift in Sources */,
+				FD0116712920646A00C12044 /* Theme.swift in Sources */,
 				FD0116632920641100C12044 /* ContentView.swift in Sources */,
 				FD0116612920641100C12044 /* ThemeSwitcherApp.swift in Sources */,
 			);

@@ -8,14 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isShowingThemePicker: Bool = false
+    @State var theme: Theme = Theme(type: .plain, color: .red)
+      
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            if theme.type == .plain {
+                Rectangle()
+                    .foregroundColor(theme.color)
+                    .edgesIgnoringSafeArea(.all)
+            } else if theme.type == .gradient {
+                if let colors = theme.colors {
+                    LinearGradient(colors: colors, startPoint: .top, endPoint:.bottom)
+                        .edgesIgnoringSafeArea(.all)
+                }
+            }
+            
+            VStack {
+                Button {
+                    isShowingThemePicker = true
+                } label: {
+                    Text("Theme Picker")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.black)
+                        .cornerRadius(12)
+                }
+            }
         }
-        .padding()
+        .sheet(isPresented: $isShowingThemePicker) {
+            ThemePickerView(selectedTheme: $theme)
+        }
     }
 }
 
