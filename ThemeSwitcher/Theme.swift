@@ -14,7 +14,7 @@ enum ThemeType: String, Equatable, Codable {
     case image
 }
 
-enum ColorName: String, Equatable, Codable {
+enum ColorName: String, Codable {
     case blue
     case green
     case red

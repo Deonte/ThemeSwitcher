@@ -16,8 +16,7 @@ struct ContentView: View {
         ZStack {
             if theme.type == ThemeType.plain {
                 if let color = theme.color  {
-                    Rectangle()
-                        .foregroundColor(Color(color.rawValue))
+                   Color(color.rawValue)
                         .edgesIgnoringSafeArea(.all)
                 }
                 
