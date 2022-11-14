@@ -24,6 +24,12 @@ struct ThemePickerView: View {
         Theme(type: .gradient, colors: [ColorName.cyan, ColorName.blue])
     ]
     
+    let imageThemes = [
+        Theme(type: .image, image: ImageName.mountain),
+        Theme(type: .image, image: ImageName.water),
+        Theme(type: .image, image: ImageName.forest)
+    ]
+    
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -59,6 +65,25 @@ struct ThemePickerView: View {
                                 startPoint: .top,
                                 endPoint:.bottom
                             )
+                            .frame(
+                                width: self.selectedTheme == theme ? 100 : 50,
+                                height: self.selectedTheme == theme ? 100 : 50
+                            )
+                        }
+                    }
+                }
+            }
+            
+            Text("Images")
+            HStack {
+                ForEach(imageThemes, id: \.image) { theme in
+                    if let image = theme.image {
+                        Button {
+                            selectedTheme = theme
+                            dismiss()
+                        } label: {
+                            Image(image.rawValue)
+                                .resizable()
                             .frame(
                                 width: self.selectedTheme == theme ? 100 : 50,
                                 height: self.selectedTheme == theme ? 100 : 50

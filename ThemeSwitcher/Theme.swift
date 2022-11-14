@@ -11,6 +11,7 @@ import SwiftUI
 enum ThemeType: String, Equatable, Codable {
     case plain
     case gradient
+    case image
 }
 
 enum ColorName: String, Equatable, Codable {
@@ -23,18 +24,27 @@ enum ColorName: String, Equatable, Codable {
     case pink
 }
 
+enum ImageName: String, Codable {
+    case mountain
+    case water
+    case forest
+}
+
 struct Theme: Equatable, Codable {
     let type: ThemeType
     var color: ColorName?
     var colors: [ColorName]?
+    var image: ImageName?
     
-    init(type: ThemeType, color: ColorName? = nil, colors: [ColorName]? = nil) {
+    init(type: ThemeType, color: ColorName? = nil, colors: [ColorName]? = nil, image: ImageName? = nil) {
         self.type = type
         switch type {
         case .plain:
             self.color = color
         case .gradient:
             self.colors = colors
+        case .image:
+            self.image = image
         }
     }
 }

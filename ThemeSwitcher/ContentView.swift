@@ -20,7 +20,7 @@ struct ContentView: View {
                         .foregroundColor(Color(color.rawValue))
                         .edgesIgnoringSafeArea(.all)
                 }
-               
+                
             } else if theme.type == ThemeType.gradient {
                 if let colors = theme.colors {
                     LinearGradient(
@@ -28,6 +28,12 @@ struct ContentView: View {
                             [Color(colors[0].rawValue), Color(colors[1].rawValue)],
                                        startPoint: .top,
                                        endPoint:.bottom)
+                        .edgesIgnoringSafeArea(.all)
+                }
+            } else if theme.type == ThemeType.image {
+                if let image = theme.image {
+                    Image(image.rawValue)
+                        .resizable()
                         .edgesIgnoringSafeArea(.all)
                 }
             }
@@ -61,6 +67,8 @@ struct ContentView: View {
             self.theme = Theme(type: theme.type, color: theme.color)
         } else if theme.type == ThemeType.gradient {
             self.theme = Theme(type: theme.type, colors: theme.colors)
+        } else if theme.type == ThemeType.image {
+            self.theme = Theme(type: theme.type, image: theme.image)
         }
     }
     
