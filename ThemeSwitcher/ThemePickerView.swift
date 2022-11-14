@@ -11,15 +11,15 @@ struct ThemePickerView: View {
     @Binding var selectedTheme: Theme
     
     let plainThemes = [
-        Theme(type: .plain, color: ColorNames.red),
-        Theme(type: .plain, color: ColorNames.green),
-        Theme(type: .plain, color: ColorNames.blue)
+        Theme(type: .plain, color: ColorName.red),
+        Theme(type: .plain, color: ColorName.green),
+        Theme(type: .plain, color: ColorName.blue)
     ]
     
     let gradientThemes = [
-        Theme(type: .gradient, colors: [ColorNames.red, ColorNames.yellow]),
-        Theme(type: .gradient, colors: [ColorNames.orange, ColorNames.blue]),
-        Theme(type: .gradient, colors: [ColorNames.cyan, ColorNames.blue])
+        Theme(type: .gradient, colors: [ColorName.red, ColorName.yellow]),
+        Theme(type: .gradient, colors: [ColorName.orange, ColorName.blue]),
+        Theme(type: .gradient, colors: [ColorName.cyan, ColorName.blue])
     ]
     
     @Environment(\.dismiss) var dismiss

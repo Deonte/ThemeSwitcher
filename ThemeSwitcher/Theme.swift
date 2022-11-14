@@ -8,12 +8,12 @@
 import Foundation
 import SwiftUI
 
-enum ThemeType: String, Equatable {
-    case plain = "plain"
-    case gradient = "gradient"
+enum ThemeType: String, Equatable, Codable {
+    case plain
+    case gradient 
 }
 
-enum ColorNames: String, Equatable {
+enum ColorName: String, Equatable, Codable {
    case blue
    case green
    case red
@@ -22,13 +22,13 @@ enum ColorNames: String, Equatable {
    case cyan
 }
 
-struct Theme: Equatable {
-    let type: String
-    var color: ColorNames?
-    var colors: [ColorNames]?
+struct Theme: Equatable, Codable {
+    let type: ThemeType
+    var color: ColorName?
+    var colors: [ColorName]?
     
-    init(type: ThemeType, color: ColorNames? = nil, colors: [ColorNames]? = nil) {
-        self.type = type.rawValue
+    init(type: ThemeType, color: ColorName? = nil, colors: [ColorName]? = nil) {
+        self.type = type
         switch type {
         case .plain:
             self.color = color

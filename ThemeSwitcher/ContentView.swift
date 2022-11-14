@@ -9,18 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isShowingThemePicker: Bool = false
-    @State var theme: Theme = Theme(type: .plain, color: ColorNames.red)
-      
+    @State var theme: Theme = Theme(type: ThemeType.plain, color: ColorName.red)
+    @AppStorage("selectedTheme") private var selectedTheme: Data = Data()
+    
     var body: some View {
         ZStack {
-            if theme.type == ThemeType.plain.rawValue {
+            if theme.type == ThemeType.plain {
                 if let color = theme.color  {
                     Rectangle()
                         .foregroundColor(Color(color.rawValue))
                         .edgesIgnoringSafeArea(.all)
                 }
                
-            } else if theme.type == ThemeType.gradient.rawValue {
+            } else if theme.type == ThemeType.gradient {
                 if let colors = theme.colors {
                     LinearGradient(
                         colors:
@@ -46,6 +47,27 @@ struct ContentView: View {
         .sheet(isPresented: $isShowingThemePicker) {
             ThemePickerView(selectedTheme: $theme)
         }
+        .onAppear {
+            loadTheme()
+        }
+        .onChange(of: theme) { newValue in
+            saveTheme()
+        }
+    }
+    
+    func loadTheme() {
+        guard let theme = try? JSONDecoder().decode(Theme.self, from: selectedTheme) else { return }
+        if theme.type == ThemeType.plain {
+            self.theme = Theme(type: theme.type, color: theme.color)
+        } else if theme.type == ThemeType.gradient {
+            self.theme = Theme(type: theme.type, colors: theme.colors)
+        }
+    }
+    
+    func saveTheme() {
+        let theme = self.theme
+        guard let selectedThemeData = try? JSONEncoder().encode(theme) else { return }
+        self.selectedTheme = selectedThemeData
     }
 }
 
