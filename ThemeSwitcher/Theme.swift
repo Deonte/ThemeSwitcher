@@ -8,18 +8,27 @@
 import Foundation
 import SwiftUI
 
-enum ThemeType: String {
-    case plain
-    case gradient
+enum ThemeType: String, Equatable {
+    case plain = "plain"
+    case gradient = "gradient"
+}
+
+enum ColorNames: String, Equatable {
+   case blue
+   case green
+   case red
+   case yellow
+   case orange
+   case cyan
 }
 
 struct Theme: Equatable {
-    let type: ThemeType
-    var color: Color?
-    var colors: [Color]?
+    let type: String
+    var color: ColorNames?
+    var colors: [ColorNames]?
     
-    init(type: ThemeType, color: Color? = nil, colors: [Color]? = nil) {
-        self.type = type
+    init(type: ThemeType, color: ColorNames? = nil, colors: [ColorNames]? = nil) {
+        self.type = type.rawValue
         switch type {
         case .plain:
             self.color = color
@@ -29,10 +38,3 @@ struct Theme: Equatable {
     }
 }
 
-let themes = [
-    Theme(type: .plain, color: .red),
-    Theme(type: .plain, color: .green),
-    Theme(type: .gradient, colors: [.red, .yellow]),
-    Theme(type: .gradient, colors: [.orange, .green]),
-    Theme(type: .plain, color: .blue)
-]

@@ -9,17 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isShowingThemePicker: Bool = false
-    @State var theme: Theme = Theme(type: .plain, color: .red)
+    @State var theme: Theme = Theme(type: .plain, color: ColorNames.red)
       
     var body: some View {
         ZStack {
-            if theme.type == .plain {
-                Rectangle()
-                    .foregroundColor(theme.color)
-                    .edgesIgnoringSafeArea(.all)
-            } else if theme.type == .gradient {
+            if theme.type == ThemeType.plain.rawValue {
+                if let color = theme.color  {
+                    Rectangle()
+                        .foregroundColor(Color(color.rawValue))
+                        .edgesIgnoringSafeArea(.all)
+                }
+               
+            } else if theme.type == ThemeType.gradient.rawValue {
                 if let colors = theme.colors {
-                    LinearGradient(colors: colors, startPoint: .top, endPoint:.bottom)
+                    LinearGradient(
+                        colors:
+                            [Color(colors[0].rawValue), Color(colors[1].rawValue)],
+                                       startPoint: .top,
+                                       endPoint:.bottom)
                         .edgesIgnoringSafeArea(.all)
                 }
             }

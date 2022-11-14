@@ -11,19 +11,18 @@ struct ThemePickerView: View {
     @Binding var selectedTheme: Theme
     
     let plainThemes = [
-        Theme(type: .plain, color: .red),
-        Theme(type: .plain, color: .green),
-        Theme(type: .plain, color: .blue)
+        Theme(type: .plain, color: ColorNames.red),
+        Theme(type: .plain, color: ColorNames.green),
+        Theme(type: .plain, color: ColorNames.blue)
     ]
     
     let gradientThemes = [
-        Theme(type: .gradient, colors: [.green, .yellow]),
-        Theme(type: .gradient, colors: [.orange, .blue]),
-        Theme(type: .gradient, colors: [.cyan, .blue])
+        Theme(type: .gradient, colors: [ColorNames.red, ColorNames.yellow]),
+        Theme(type: .gradient, colors: [ColorNames.orange, ColorNames.blue]),
+        Theme(type: .gradient, colors: [ColorNames.cyan, ColorNames.blue])
     ]
     
     @Environment(\.dismiss) var dismiss
- 
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -34,11 +33,13 @@ struct ThemePickerView: View {
                         selectedTheme = theme
                         dismiss()
                     } label: {
-                        theme.color
-                            .frame(
-                                width: self.selectedTheme == theme ? 100 : 50,
-                                height: self.selectedTheme == theme ? 100 : 50
-                            )
+                        if let color = theme.color?.rawValue {
+                            Color(color)
+                                .frame(
+                                    width: self.selectedTheme == theme ? 100 : 50,
+                                    height: self.selectedTheme == theme ? 100 : 50
+                                )
+                        }
                     }
                 }
             }
@@ -51,17 +52,20 @@ struct ThemePickerView: View {
                             selectedTheme = theme
                             dismiss()
                         } label: {
-                            LinearGradient(colors: colors, startPoint: .top, endPoint:.bottom)
-                                .frame(
-                                    width: self.selectedTheme == theme ? 100 : 50,
-                                    height: self.selectedTheme == theme ? 100 : 50
-                                )
+                            LinearGradient(
+                                colors: [Color(colors[0].rawValue), Color(colors[1].rawValue)],
+                                startPoint: .top,
+                                endPoint:.bottom
+                            )
+                            .frame(
+                                width: self.selectedTheme == theme ? 100 : 50,
+                                height: self.selectedTheme == theme ? 100 : 50
+                            )
                         }
                     }
                 }
             }
         }
-        
         .padding()
     }
 }
