@@ -13,7 +13,9 @@ struct ThemePickerView: View {
     let plainThemes = [
         Theme(type: .plain, color: ColorName.red),
         Theme(type: .plain, color: ColorName.green),
-        Theme(type: .plain, color: ColorName.blue)
+        Theme(type: .plain, color: ColorName.blue),
+        Theme(type: .plain, color: ColorName.pink),
+
     ]
     
     let gradientThemes = [

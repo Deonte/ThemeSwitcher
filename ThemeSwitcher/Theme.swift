@@ -10,16 +10,17 @@ import SwiftUI
 
 enum ThemeType: String, Equatable, Codable {
     case plain
-    case gradient 
+    case gradient
 }
 
 enum ColorName: String, Equatable, Codable {
-   case blue
-   case green
-   case red
-   case yellow
-   case orange
-   case cyan
+    case blue
+    case green
+    case red
+    case yellow
+    case orange
+    case cyan
+    case pink
 }
 
 struct Theme: Equatable, Codable {
