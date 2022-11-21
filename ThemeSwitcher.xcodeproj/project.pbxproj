@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FD0116612920641100C12044 /* ThemeSwitcherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0116602920641100C12044 /* ThemeSwitcherApp.swift */; };
-		FD0116632920641100C12044 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0116622920641100C12044 /* ContentView.swift */; };
+		FD0116632920641100C12044 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0116622920641100C12044 /* ThemeView.swift */; };
 		FD0116652920641200C12044 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0116642920641200C12044 /* Assets.xcassets */; };
 		FD0116682920641200C12044 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD0116672920641200C12044 /* Preview Assets.xcassets */; };
 		FD0116712920646A00C12044 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0116702920646A00C12044 /* Theme.swift */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		FD01165D2920641100C12044 /* ThemeSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThemeSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD0116602920641100C12044 /* ThemeSwitcherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSwitcherApp.swift; sourceTree = "<group>"; };
-		FD0116622920641100C12044 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FD0116622920641100C12044 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		FD0116642920641200C12044 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD0116672920641200C12044 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FD0116702920646A00C12044 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 			children = (
 				FD0116602920641100C12044 /* ThemeSwitcherApp.swift */,
 				FD0116702920646A00C12044 /* Theme.swift */,
-				FD0116622920641100C12044 /* ContentView.swift */,
+				FD0116622920641100C12044 /* ThemeView.swift */,
 				FD01167429206A4F00C12044 /* ThemePickerView.swift */,
 				FD0116642920641200C12044 /* Assets.xcassets */,
 				FD0116662920641200C12044 /* Preview Content */,
@@ -145,7 +145,7 @@
 			files = (
 				FD01167529206A4F00C12044 /* ThemePickerView.swift in Sources */,
 				FD0116712920646A00C12044 /* Theme.swift in Sources */,
-				FD0116632920641100C12044 /* ContentView.swift in Sources */,
+				FD0116632920641100C12044 /* ThemeView.swift in Sources */,
 				FD0116612920641100C12044 /* ThemeSwitcherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

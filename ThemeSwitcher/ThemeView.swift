@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ThemeView: View {
     @State private var isShowingThemePicker: Bool = false
     @State var theme: Theme = Theme(type: ThemeType.plain, color: ColorName.red)
     @AppStorage("selectedTheme") private var selectedTheme: Data = Data()
@@ -80,6 +80,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ThemeView()
     }
 }

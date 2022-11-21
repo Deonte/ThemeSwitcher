@@ -11,7 +11,7 @@ import SwiftUI
 struct ThemeSwitcherApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ThemeView()
         }
     }
 }

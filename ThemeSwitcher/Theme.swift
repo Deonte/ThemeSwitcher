@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftUI
 
 enum ThemeType: String, Equatable, Codable {
     case plain
